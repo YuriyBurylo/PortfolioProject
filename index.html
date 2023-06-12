@@ -54,9 +54,9 @@
                     <h2>About Me</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, reiciendis libero? Necessitatibus, libero. Saepe, sed nesciunt quae facere magnam incidunt earum repudiandae, fugit quos, porro laboriosam. Doloribus delectus sed tempore!</p>
                     <div class="tab-titles">
-                        <h3 class="tab-link active-link" onclick="openTab('education')">Education</h3>
-                        <h3 class="tab-link" onclick="openTab('experience')">Experience</h3>
-                        <h3 class="tab-link" onclick="openTab('skills')">Skills</h3>
+                        <h3 id="edu" class="tab-link active-link">Education</h3>
+                        <h3 id="exp" class="tab-link">Experience</h3>
+                        <h3 id="sk" class="tab-link">Skills</h3>
                     </div>
                     <div class="tab-contents">
                         <ul id="education" class="tab-text active-tab">
@@ -87,19 +87,6 @@
         </div>
     </main>
     <footer class="container"></footer>
-    <script>
-        const links = document.getElementsByClassName('tab-link');
-        const tabs = document.getElementsByClassName('tab-text');
-        function openTab(tabName) {
-            for (link of links) {
-                link.classList.remove('active-link');
-            };
-            for (tab of tabs) {
-                tab.classList.remove('active-tab');
-            };
-            event.target.classList.add('active-link');
-            document.getElementById(tabName).classList.add('active-tab');
-        }
-    </script>
+    <script src="./main.js"></script>
 </body>
 </html>
