@@ -97,7 +97,49 @@ main div {
 }
 
 .home-content h1 {
-    font-family: 'Lemon';
+    font-size: 2.5rem;
+}
+
+.home-content h3 {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+}
+
+.social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    margin: 2rem 1rem 2rem 0;
+}
+
+.social a:hover {
+    background-color: #fff;
+    color: black;
+    box-shadow: 0 0 16px #fff;
+}
+.social a:active {
+    box-shadow: 0 0 20px red;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border: 2px solid red;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+.cta-btn:hover {
+    background-color: red;
+}
+
+.cta-btn:active {
+    box-shadow: 0 0 24px red;
 }
 
 .home-picture {
@@ -113,6 +155,8 @@ main div {
     overflow: hidden;
     margin: auto;
 }
+
 .picture-wrapper img {
     max-height: 100%;
 }
+
