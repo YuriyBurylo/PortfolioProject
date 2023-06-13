@@ -31,7 +31,7 @@ header {
     height: 60px;
     background-color: #000;
 }
-header div {
+header>div {
     grid-column: 2/3;
     display: flex;
     justify-content: space-between;
@@ -81,7 +81,7 @@ nav ul li a:hover::after {
 }
 
 
-main div {
+main>div {
     grid-column: 2/3;
 }
 
@@ -194,8 +194,9 @@ main div {
 }
 
 .about-text h2 {
+    font-size: 2rem;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .about-text p {
@@ -223,6 +224,11 @@ main div {
     transition: all .2s ease .1s;
 }
 
+.tab-link:hover::after {
+    width: 100%;
+    background-color: yellow;
+}
+
 .tab-link.active-link::after {
     width: 100%;
 }
@@ -233,4 +239,51 @@ main div {
 
 .tab-text.active-tab {
     display: inline-block;
+}
+
+#services {
+    height: 100vh;
+}
+
+#services h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+}
+
+.service-item {
+    padding: 2rem 2rem;
+    background-color: #353232;
+    border-radius: 12px;
+    transition: all .3s linear .1s;
+}
+.service-item:hover {
+    border: 2px solid red;
+    transform: translateY(-16px) scale(1.1);
+}
+
+.service-item i {
+    color: red;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.service-item h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.service-item p {
+    margin-bottom: 1rem;
+}
+
+.service-item a {
+    color: red;
 }
