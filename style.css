@@ -60,6 +60,10 @@ nav ul li {
     margin-right: 5px;
 }
 
+i.fa-circle-xmark, i.fa-bars {
+    display: none;
+}
+
 nav ul li a {
     font-size: 1.2rem;
     position: relative;
@@ -174,6 +178,7 @@ main>div {
 
 #about {
     height: auto;
+    padding-top: 2rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -256,6 +261,7 @@ main>div {
 
 #services {
     height: auto;
+    padding-top: 2rem;
 }
 
 #services h2 {
@@ -271,7 +277,7 @@ main>div {
 }
 
 .service-item {
-    padding: 2rem 2rem;
+    padding: 3rem 2rem;
     background-color: #353232;
     border-radius: 12px;
     transition: all .3s linear .1s;
@@ -303,6 +309,7 @@ main>div {
 
 #projects {
     height: auto;
+    padding-top: 2rem;
 }
 
 #projects h2 {
@@ -442,4 +449,33 @@ footer p {
 
 footer p span i {
     color: red;
+}
+/*-----------CSS for small screen-------------*/
+
+@media only screen and (max-width: 860px) {
+    nav ul {
+        display: block;
+        background-color: red;
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        padding: 72px 24px;
+    }
+
+    nav ul li {
+        margin-bottom: 24px;
+    }
+
+    i.fa-circle-xmark, i.fa-bars {
+        display: block;
+        font-size: 1.5rem;
+    } 
+    i.fa-circle-xmark {
+        position: absolute;
+        top: 24px;
+        left: 48px;
+    }
+
 }

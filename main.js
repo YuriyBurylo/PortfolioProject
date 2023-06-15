@@ -33,3 +33,16 @@ document.getElementById('sk').addEventListener('click', function () {
     this.classList.add('active-link');
     document.getElementById('skills').classList.add('active-tab');
 });
+
+const menu = document.getElementById('menu');
+document.querySelector('.fa-circle-xmark').addEventListener('click', closeMenu);
+document.querySelector('.fa-bars').addEventListener('click', openMenu);
+
+
+function openMenu() {
+    menu.style.right = '0';
+}
+
+function closeMenu() {
+    menu.style.right = '-200px';
+}
