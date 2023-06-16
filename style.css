@@ -532,4 +532,14 @@ footer p span i {
         left: 48px;
     }
 
+    .home-content, .home-picture {
+        padding-left: 2rem;  
+    }
+
+    .contact-left {
+        padding-left: 3.6rem;
+    }
+    .contact-right {
+        padding-right: 2rem;
+    }
 }
