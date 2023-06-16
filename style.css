@@ -9,19 +9,28 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-dark: #000;
+    --secondary-dark: #353232;
+    --decoration-color: red;
+    --font-color: white;
+    --section-heading: 2rem;
+}
+
 ul {
     list-style: none;
 }
 
 body {
-    background-color: black;
-    color: white;
+    background-color: var(--primary-dark, #000);
+    color: var(--font-color, white);
 }
 
 .container {
     display: grid;
     grid-template-columns: 12% 1fr 12%;
 }
+
 header {
     position: fixed;
     top: 0;
@@ -29,7 +38,7 @@ header {
     z-index: 100;
     width: 100%;
     height: 60px;
-    background-color: #000;
+    background-color: var(--primary-dark, #000);
 }
 header>div {
     grid-column: 2/3;
@@ -40,7 +49,7 @@ header>div {
 
 a {
     text-decoration: none;
-    color: white;
+    color: var(--font-color, white);
 }
 
 header .logo {
@@ -50,7 +59,7 @@ header .logo {
 }
 
 span {
-    color: red;
+    color: var(--decoration-color, red);
     font-weight: 700;
 }
 
@@ -73,7 +82,7 @@ nav ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background-color: red;
+    background-color: var(--decoration-color, red);
     position: absolute;
     left: 0;
     bottom: -3px;
@@ -90,14 +99,19 @@ main>div {
 }
 
 #home {
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-wrap: wrap-reverse;
     align-items: center; 
+    justify-content: space-between;
+    padding-bottom: 2rem;
 }
 
 .home-content {
-    width: 50%;
+    flex-basis: 500px;
+    flex-grow: 1;
+    flex-shrink: 3;
+    margin: 0 auto;
 }
 
 .home-content h1 {
@@ -125,45 +139,49 @@ main>div {
 
 .social a:hover {
     background-color: #fff;
-    color: black;
+    color: var(--primary-dark, #000);
     box-shadow: 0 0 16px #fff;
     transform: translateY(-4px) scale(1.1);
 }
 .social a:active {
-    box-shadow: 0 0 20px red;
+    box-shadow: 0 0 20px var(--decoration-color, red);
 }
 
 .btn {
     display: inline-block;
     width: fit-content;
     padding: 1rem 3rem;
-    border: 2px solid red;
+    margin-bottom: 2rem;
+    border: 2px solid var(--decoration-color, red);
     border-radius: 10px;
     font-size: 1.5rem;
     transition: all .2s ease .1s;
 }
 
 .btn:hover {
-    background-color: red;
+    background-color: var(--decoration-color, red);
     transform: scale(1.1);
 }
 
 .cta-btn:active {
-    box-shadow: 0 0 24px red;
+    box-shadow: 0 0 24px var(--decoration-color, red);
 }
 
 .home-picture {
-    width: 50%;
+    flex-basis: 500px;
+    flex-grow: 3;
+    flex-shrink: 1;
+    margin: 0 auto;
 }
 
 .picture-wrapper {
     width: 500px;
     height: 500px;
-    border: 3px solid red;
+    border: 3px solid var(--decoration-color, red);
     border-radius: 50%;
-    box-shadow: 0 0 60px red ;
+    box-shadow: 0 0 60px var(--decoration-color, red);
     overflow: hidden;
-    margin: auto;
+    margin: 6rem auto;
     transition: all .2s linear .1s;
 }
 
@@ -181,13 +199,17 @@ main>div {
     padding-top: 2rem;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .about-picture {
-    width: 35%;
+    flex-basis: 400px;
+    flex-grow: 1;
+    flex-shrink: 1;
     height: 80%;
     overflow: hidden;
+    margin: auto 1rem;
 }
 
 .about-picture img {
@@ -201,13 +223,15 @@ main>div {
 }
 
 .about-text {
-    width: 65%;
+    flex-basis: 600px;
+    flex-grow: 2;
+    flex-shrink: 3;
     height: 80%;
-    padding: 1rem 1rem 1rem 2.5rem;
+    padding: 1rem 1rem 1rem 1rem;
 }
 
 .about-text h2 {
-    font-size: 2rem;
+    font-size: var(--section-heading, 2rem);
     text-align: center;
     margin: 2rem auto;
 }
@@ -230,7 +254,7 @@ main>div {
     content: '';
     width: 0;
     height: 3px;
-    background-color: red;
+    background-color: var(--decoration-color, red);
     position: absolute;
     left: 0;
     bottom: -3px;
@@ -256,7 +280,7 @@ main>div {
 
 #skills i {
     font-size: 1.2rem;
-    color: red;
+    color: var(--decoration-color, red);
 }
 
 #services {
@@ -265,7 +289,7 @@ main>div {
 }
 
 #services h2 {
-    font-size: 2rem;
+    font-size: var(--section-heading, 2rem);
     text-align: center;
     margin: 3rem auto;
 }
@@ -278,17 +302,17 @@ main>div {
 
 .service-item {
     padding: 3rem 2rem;
-    background-color: #353232;
+    background-color: var(--secondary-dark, #353232);
     border-radius: 12px;
     transition: all .3s linear .1s;
 }
 .service-item:hover {
-    border: 2px solid red;
+    border: 2px solid var(--decoration-color, red);
     transform: translateY(-16px) scale(1.1);
 }
 
 .service-item i {
-    color: red;
+    color: var(--decoration-color, red);
     font-size: 1.6rem;
     margin-bottom: 1rem;
 }
@@ -304,7 +328,7 @@ main>div {
 }
 
 .service-item a {
-    color: red;
+    color: var(--decoration-color, red);
 }
 
 #projects {
@@ -313,7 +337,7 @@ main>div {
 }
 
 #projects h2 {
-    font-size: 2rem;
+    font-size: var(--section-heading, 2rem);
     text-align: center;
     margin: 3.6rem auto;
 }
@@ -384,14 +408,19 @@ main>div {
 
 #contact>div {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .contact-left {
-    flex-basis: 35%;
+    flex-basis: 400px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin: 0 auto;
 }
 
 .contact-left h2 {
-    font-size: 2rem;
+    font-size: var(--section-heading, 2rem);
     text-align: start;
     margin: 0 auto 3rem auto;
 }
@@ -404,11 +433,14 @@ main>div {
 
 .contact-left h3 i {
     font-size: 1.5rem;
-    color: red;
+    color: var(--decoration-color, red);
 }
 
 .contact-right {
-    flex-basis: 65%;
+    flex-basis: 500px;
+    flex-grow: 2;
+    flex-shrink: 2;
+    margin: 0 auto;
 }
 
 .contact-right form {
@@ -419,7 +451,7 @@ form input, form textarea {
     width: 100%;
     padding: 0.5rem 1rem;
     margin: 0.5rem 3.5rem;
-    background-color: #353232;
+    background-color: var(--secondary-dark, #353232);
     outline: none;
     border-radius: 6px;
     transition: all .4s linear .1s;
@@ -431,14 +463,14 @@ form input:hover, form textarea:hover {
 }
 
 form .btn {
-    background-color: #000;
-    color: #fff; 
+    background-color: var(--primary-dark, #000);
+    color: var(--font-color, white); 
     margin: 1rem 3.5rem;
 }
 
 footer {
     padding: 1rem 0;
-    background-color: #353232;
+    background-color: var(--secondary-dark, #353232);
 }
 
 footer p {
@@ -448,14 +480,36 @@ footer p {
 }
 
 footer p span i {
-    color: red;
+    color: var(--decoration-color, red);
 }
 /*-----------CSS for small screen-------------*/
+@media only screen and (max-width: 1380px) {
+    .container {
+        grid-template-columns: 8% 1fr 8%;
+    }
+
+    .home-content h1 {
+        font-size: 2.3rem;
+    }
+    
+    .home-content h3 {
+        font-size: 1.8rem;
+    }
+    .about-picture {
+        flex-basis: 360px;
+        margin: auto 1rem;
+    }
+}
 
 @media only screen and (max-width: 860px) {
+
+    .container {
+        grid-template-columns: 4% 1fr 4%;
+    }
+
     nav ul {
         display: block;
-        background-color: red;
+        background-color: var(--decoration-color, red);
         width: 200px;
         height: 100vh;
         position: fixed;

@@ -154,12 +154,12 @@
                         <a href="./CV  Yuriy Burylo.docx" download type="button" class="btn">Download CV</a>
                     </div>
                     <div class="contact-right">
-                        <form action="">
+                        <form name="submit-to-google-sheet">
                             <input type="text" name="First Name" placeholder="Your First Name" required>
                             <input type="text" name="Last Name" placeholder="Your Last Name" required>
                             <input type="email" name="Email" placeholder="Your Email" required>
-                            <textarea name="Your Message" id="" cols="30" rows="6" placeholder="Your Message"></textarea>
-                            <button type="submit" class="btn">Send</button>
+                            <textarea name="Message" id="" cols="30" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -169,6 +169,17 @@
     <footer class="container">
         <p>Copyright <i class="fa-regular fa-copyright"></i> 2023 Yuriy Burylo. From Yuriy with love <span><i class="fa-regular fa-heart"></i></span> !</p> 
     </footer>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzg9ttDt5VqwFO7oYziqRw-XhcthmwLLPZIvxQvhjxlj2XgPWAm52b07U-8J2H3UfiZ/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
     <script src="./main.js"></script>
 </body>
 </html>
