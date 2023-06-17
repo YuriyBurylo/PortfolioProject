@@ -280,7 +280,22 @@ main>div {
 
 #skills i {
     font-size: 1.2rem;
-    color: var(--decoration-color, red);
+}
+
+#skills i.fa-html5 {
+    color: orangered;
+}
+
+#skills i.fa-css3-alt {
+    color:royalblue
+}
+
+#skills i.fa-square-js {
+    color: rgb(255, 221, 0);
+}
+
+#skills i.fa-react {
+    color: royalblue;
 }
 
 #services {
